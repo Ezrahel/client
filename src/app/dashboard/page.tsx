@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useQuery } from "@tanstack/react-query";
 import { AlertCircle, Check, Circle } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button, buttonClasses } from "@/components/ui/button";
 import { DashboardSkeleton } from "@/components/ui/skeleton";
 import { StatusBadge } from "@/components/ui/status-badge";
 import { api } from "@/lib/api/client";
@@ -38,10 +38,8 @@ export default function DashboardPage() {
           <h1 className="text-2xl font-semibold tracking-tight text-ink">Overview</h1>
           <p className="mt-1 text-sm text-muted">{account.businessName}</p>
         </div>
-        <Link href="/onboarding">
-          <Button variant="secondary" size="sm">
-            Continue setup
-          </Button>
+        <Link href="/onboarding" className={buttonClasses("secondary", "sm")}>
+          Continue setup
         </Link>
       </div>
 

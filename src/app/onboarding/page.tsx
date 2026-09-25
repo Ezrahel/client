@@ -7,7 +7,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
 import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
+import { Button, buttonClasses } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select } from "@/components/ui/select";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -197,8 +197,8 @@ export default function OnboardingPage() {
                 Your business email account is ready. Manage domains, mailboxes, and
                 billing from the dashboard anytime.
               </p>
-              <Link href="/dashboard">
-                <Button variant="accent">Go to dashboard</Button>
+              <Link href="/dashboard" className={buttonClasses("accent", "md")}>
+                Go to dashboard
               </Link>
             </div>
           ) : null}

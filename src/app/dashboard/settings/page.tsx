@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
 import { toast } from "sonner";
-import { Button } from "@/components/ui/button";
+import { Button, buttonClasses } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { StatusBadge } from "@/components/ui/status-badge";
 import { api } from "@/lib/api/client";
@@ -76,10 +76,8 @@ export default function SettingsPage() {
           />
         </div>
         {!session.user.emailVerified ? (
-          <Link href="/verify-email" className="mt-3 inline-block">
-            <Button size="sm" variant="secondary">
-              Verify email
-            </Button>
+          <Link href="/verify-email" className={buttonClasses("secondary", "sm", "mt-3 inline-flex")}>
+            Verify email
           </Link>
         ) : null}
       </section>

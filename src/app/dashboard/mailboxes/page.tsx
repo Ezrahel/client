@@ -7,7 +7,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
 import { Mail } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button, buttonClasses } from "@/components/ui/button";
 import { Dialog } from "@/components/ui/dialog";
 import { EmptyState } from "@/components/ui/empty-state";
 import { Input } from "@/components/ui/input";
@@ -192,10 +192,8 @@ export default function MailboxesPage() {
                     </td>
                     <td className="px-4 py-3">
                       <div className="flex gap-2">
-                        <Link href={`/dashboard/mailboxes/${mb.id}`}>
-                          <Button size="sm" variant="secondary">
-                            View
-                          </Button>
+                        <Link href={`/dashboard/mailboxes/${mb.id}`} className={buttonClasses("secondary", "sm")}>
+                          View
                         </Link>
                         <Button
                           size="sm"
@@ -226,10 +224,8 @@ export default function MailboxesPage() {
                   {formatBytes(mb.usedBytes)} / {formatBytes(mb.quotaBytes)}
                 </p>
                 <div className="flex gap-2">
-                  <Link href={`/dashboard/mailboxes/${mb.id}`}>
-                    <Button size="sm" variant="secondary">
-                      View
-                    </Button>
+                  <Link href={`/dashboard/mailboxes/${mb.id}`} className={buttonClasses("secondary", "sm")}>
+                    View
                   </Link>
                 </div>
               </li>

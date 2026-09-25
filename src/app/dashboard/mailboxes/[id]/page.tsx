@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { toast } from "sonner";
-import { Button } from "@/components/ui/button";
+import { Button, buttonClasses } from "@/components/ui/button";
 import { CopyButton } from "@/components/ui/copy-button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { MailboxStatusBadge } from "@/components/ui/status-badge";
@@ -57,8 +57,8 @@ export default function MailboxDetailPage() {
     return (
       <div className="mx-auto max-w-3xl rounded-md border border-border bg-white p-6">
         <p className="font-medium text-ink">Mailbox not found.</p>
-        <Link href="/dashboard/mailboxes" className="mt-3 inline-block">
-          <Button variant="secondary">Back to mailboxes</Button>
+        <Link href="/dashboard/mailboxes" className={buttonClasses("secondary", "md", "mt-3")}>
+          Back to mailboxes
         </Link>
       </div>
     );

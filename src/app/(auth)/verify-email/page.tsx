@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { toast } from "sonner";
-import { Button } from "@/components/ui/button";
+import { Button, buttonClasses } from "@/components/ui/button";
 import { api } from "@/lib/api/client";
 import { ApiClientError } from "@/lib/api/errors";
 import { useAuth } from "@/lib/auth/auth-context";
@@ -50,10 +50,8 @@ export default function VerifyEmailPage() {
           Verify email
         </Button>
       ) : (
-        <Link href="/login?next=/verify-email" className="mt-6 block">
-          <Button variant="accent" className="w-full">
-            Sign in to verify
-          </Button>
+        <Link href="/login?next=/verify-email" className={buttonClasses("accent", "md", "mt-6 w-full")}>
+          Sign in to verify
         </Link>
       )}
       <p className="mt-6 text-center text-sm text-muted">
